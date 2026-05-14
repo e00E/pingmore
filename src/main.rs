@@ -41,8 +41,7 @@ struct Args {
     /// kind of ping
     ///
     /// - dns: Send a DNS request to the target. Succeed when any response is received.
-    /// - icmp: Send an ICMP echo request to the target. Succeed when the echo response is received.
-    /// Use IPPROTO_ICMP to run as an unprivileged user. This isn't supported on all systems. You might have to edit the sysctl "net.ipv4.ping_group_range".
+    /// - icmp: Send an ICMP echo request to the target. Succeed when the echo response is received. Uses IPPROTO_ICMP to run as an unprivileged user. This isn't supported on all systems. You might have to edit the sysctl "net.ipv4.ping_group_range".
     /// - tcp: Establish a TCP connection to the target. Succeed when the connection is established.
     /// - udp: Send the payload to the target. Succeed when any response is received.
     #[arg(short, long, default_value = "icmp", verbatim_doc_comment)]

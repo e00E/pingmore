@@ -1,5 +1,5 @@
 use std::{
-    io::{Error, ErrorKind, Read, Result},
+    io::{Error, Read, Result},
     net::{IpAddr, SocketAddr},
     time::Instant,
 };
@@ -29,7 +29,7 @@ pub fn echo(address: IpAddr, deadline: Option<Instant>) -> Result<()> {
             "unexpected ICMP response type {}",
             icmp_actual_response_type
         );
-        return Err(Error::new(ErrorKind::Other, message));
+        return Err(Error::other(message));
     };
     Ok(())
 }
